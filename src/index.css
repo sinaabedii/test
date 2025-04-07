@@ -1,0 +1,157 @@
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css');
+@import url('https://cdn.jsdelivr.net/gh/rastikerdar/vazir-code@v.1.1.2/dist/vazir-code-font-face.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    direction: rtl;
+    font-family: 'Vazirmatn', sans-serif;
+  }
+  
+  body {
+    @apply bg-neutral-50 text-neutral-900;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+  
+  h1 {
+    @apply text-3xl;
+  }
+  
+  h2 {
+    @apply text-2xl;
+  }
+  
+  h3 {
+    @apply text-xl;
+  }
+
+  input, select, textarea {
+    @apply border border-neutral-200 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+
+  button {
+    @apply transition-all duration-200;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply py-2 px-4 rounded-md font-medium transition-all duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-primary-500 text-white hover:bg-primary-600 active:bg-primary-700;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-500 text-white hover:bg-secondary-600 active:bg-secondary-700;
+  }
+  
+  .btn-outline {
+    @apply border border-primary-500 text-primary-500 hover:bg-primary-50;
+  }
+  
+  .btn-ghost {
+    @apply text-primary-500 hover:bg-primary-50;
+  }
+  
+  .btn-danger {
+    @apply bg-red-500 text-white hover:bg-red-600 active:bg-red-700;
+  }
+  
+  .btn-success {
+    @apply bg-green-500 text-white hover:bg-green-600 active:bg-green-700;
+  }
+  
+  .input {
+    @apply border border-neutral-200 rounded-md p-2 w-full focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+  
+  .label {
+    @apply block text-sm font-medium text-neutral-700 mb-1;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-card p-4 transition-all duration-200 hover:shadow-card-hover;
+  }
+  
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  
+  .badge-primary {
+    @apply bg-primary-100 text-primary-800;
+  }
+  
+  .badge-secondary {
+    @apply bg-secondary-100 text-secondary-800;
+  }
+
+  .container-custom {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+}
+
+/* زوم تصاویر محصول */
+.product-zoom {
+  cursor: zoom-in;
+  transition: transform 0.3s;
+}
+
+.product-zoom:hover {
+  transform: scale(1.05);
+}
+
+/* انیمیشن لودینگ */
+.spinner {
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  border-top: 3px solid #0073f5;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* منوی کشویی */
+.dropdown-slide {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown-active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* اسکرول کاستوم */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #999999;
+}
